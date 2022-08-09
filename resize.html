@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		How to detect DIV’s dimension changed?
+	</title>
+	<style>
+		#box {
+			resize: both;
+			border: solid;
+			background-color: rgb(93, 227, 129);
+			height: 100px;
+			width: 100px;
+			overflow: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="color: rgb(51, 52, 51)">
+Anuj Zanje
+	</h1>
+	<b>
+	How to detect DIV’s dimension changed?
+	</b>
+	<p>Check the console to know if the div's dimensions have changed.
+	</p>
+	<div id="box"></div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js">
+	</script>
+
+	<script>
+		elem = $("#box")[0];
+
+		let resizeObserver = new ResizeObserver(() => {
+			console.log("The element was resized");
+		});
+
+		resizeObserver.observe(elem);
+	</script>
+</body>
+
+</html>
